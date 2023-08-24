@@ -1,1 +1,3 @@
 .env
+odoo_pg_pass
+/config
