@@ -5,8 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: odoo
-    depends_on:
-      - db
     ports:
       - "8069:8069"
     volumes:
@@ -17,22 +15,8 @@ services:
       - PASSWORD_FILE=/run/secrets/postgresql_password
     secrets:
       - postgresql_password
-  db:
-    image: postgres:15
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
-      - POSTGRES_USER=odoo
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    ports:
-      - "5433:5432"
-    volumes:
-      - odoo-db-data:/var/lib/postgresql/data/pgdata
-    secrets:
-      - postgresql_password
 volumes:
   odoo-web-data:
-  odoo-db-data:
 
 secrets:
   postgresql_password:
