@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: odoo
+    restart: unless-stopped
     ports:
       - "8069:8069"
     volumes:
