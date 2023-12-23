@@ -1,0 +1,6 @@
+#paymob-checkout > button{
+	display: none;
+}
+#paymob-checkout > button:first-child{
+	display: block;
+}
