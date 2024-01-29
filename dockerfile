@@ -1,5 +1,5 @@
 # Use the official Odoo 16 image as the base image
-FROM odoo:17
+FROM odoo:latest
 
 # Update package lists and install nano
 USER root
